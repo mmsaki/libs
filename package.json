@@ -7,10 +7,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build:jsonrpc": "cd packages/jsonrpc && bun run build"
+    "build:jsonrpc": "cd packages/jsonrpc && bun run build",
+    "publish:jsonrpc": "cd packages/jsonrpc && bun run  publish"
   },
   "dependencies": {
-    "@msaki/jsonrpc": "workspace:jsonrpc"
+    "msaki/jsonrpc": "workspace:jsonrpc"
   },
   "devDependencies": {
     "@types/bun": "latest"
