@@ -1,3 +1,4 @@
 {
-  "name": "@msaki/jsonrpc"
+  "name": "@msaki/jsonrpc",
+  "version": "1.0.0"
 }
