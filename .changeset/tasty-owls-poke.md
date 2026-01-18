@@ -1,0 +1,5 @@
+---
+"@msaki/jsonrpc": patch
+---
+
+update
