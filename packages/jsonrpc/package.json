@@ -6,6 +6,15 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmsaki/libs/",
+    "directory": "packages/jsonrpc"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
   "scripts": {
     "build": "tsup index.ts --format cjs,esm --dts",
     "publish": "bun run build && changeset publish",
