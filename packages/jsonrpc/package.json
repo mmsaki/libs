@@ -6,6 +6,10 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mmsaki/libs.git",
@@ -16,13 +20,12 @@
     "directory": "dist"
   },
   "scripts": {
-    "build": "tsup index.ts --format cjs,esm --dts",
+    "build": "tsc -p tsconfig.json",
     "publish": "bun run build && npm publish --access public",
     "lint": "tsc"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "tsup": "^8.5.1"
   },
   "peerDependencies": {
     "typescript": "^5"
