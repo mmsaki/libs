@@ -2,7 +2,9 @@
 
 ## Usage
 
-```sh
+### RPC Server
+
+```ts
 import { JsonRpcServer } from "@msaki/jsonrpc";
 
 const server = new JsonRpcServer()
@@ -26,4 +28,26 @@ Bun.serve({
 })
 
 console.log("JSON-RPC sever on http://localhost:4444")
+```
+
+### PRC Client
+
+```ts
+import { JsonRpcClient } from "@msaki/jsonrpc";
+import type {
+  JsonRpcRequest,
+  JsonRpcResponse
+} from "@msaki/jsonrpc";
+
+const url = "http://localhost:4444";
+
+const client = new JsonRpcClient(async (req: JsonRpcRequest) => {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(req)
+  });
+
+  return (await res.json()) as JsonRpcResponse
+});
 ```
