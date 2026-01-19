@@ -1,28 +1,28 @@
 export type JsonRpcId = string | number | null
 
-export interface JsonRpcRequest {
+export interface JsonRpcRequest<Method> {
   jsonrpc: "2.0"
-  method: string
-  params?: unknown
+  method: Method
+  params?: unknown[]
   id?: JsonRpcId
 }
 
-export interface JsonRpcSuccess {
+export interface JsonRpcSuccess<Result> {
   jsonrpc: "2.0"
-  result: unknown
+  result: Result
   id: JsonRpcId
 }
 
-export interface JsonRpcErrorObject {
-  code: number
+export interface JsonRpcErrorObject<ErrorCode> {
+  code: ErrorCode
   message: string
   data?: unknown
 }
 
-export interface JsonRpcError {
+export interface JsonRpcError<ErrorCode> {
   jsonrpc: "2.0"
-  error: JsonRpcErrorObject
+  error: JsonRpcErrorObject<ErrorCode>
   id: JsonRpcId
 }
 
-export type JsonRpcResponse = JsonRpcSuccess | JsonRpcError
+export type JsonRpcResponse<Result, ErrorCode> = JsonRpcSuccess<Result> | JsonRpcError<ErrorCode>

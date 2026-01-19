@@ -4,11 +4,11 @@ export class JsonRpcClient {
   private id = 0
 
   constructor(
-    private send: (req: JsonRpcRequest) => Promise<JsonRpcResponse>
+    private send: (req: JsonRpcRequest<unknown>) => Promise<JsonRpcResponse<unknown, number>>
   ) {}
 
-  async call<T = unknown>(method: string, params?: unknown): Promise<T> {
-    const request: JsonRpcRequest = {
+  async call<Method = string, Result = unknown, E = unknown>(method: Method, params?: unknown[]): Promise<Result | E> {
+    const request: JsonRpcRequest<Method> = {
       jsonrpc: "2.0",
       method,
       params,
@@ -16,14 +16,13 @@ export class JsonRpcClient {
     }
     const response = await this.send(request);
     if ("error" in response) {
-      const e = response.error
-      throw new Error(`RPC error ${e.code} ${e.message}`)
+      return response.error as E
     }
-    return response.result as T
+    return response.result as Result
   }
 
-  notify(method: string, params?: unknown) {
-    const request: JsonRpcRequest = {
+  notify<Method = string>(method: Method, params?: unknown[]) {
+    const request: JsonRpcRequest<Method> = {
       jsonrpc: "2.0",
       method,
       params
