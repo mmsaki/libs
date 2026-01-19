@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "publish": "bun run build && npm publish --access public",
+    "publish": "bun run build && bun publish --access public",
     "lint": "tsc"
   },
   "devDependencies": {
