@@ -1,7 +1,5 @@
 # Ethereum Client Libs
 
-Complete Ethereum client api libraries with implemented end to end.
-
 ## Core
 
 ### [`@msaki/jsonrpc`](./packages/jsonrpc)
