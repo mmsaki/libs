@@ -35,7 +35,7 @@ Bun.serve({
   }
 })
 
-console.log("JSON-RPC sever on http://localhost:4444")
+console.log("JSON-RPC running on http://localhost:4444")
 ```
 
 ### RPC Client

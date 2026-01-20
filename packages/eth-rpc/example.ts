@@ -8,6 +8,7 @@ const balance = await eth.eth_getBalance(
 	"latest",
 );
 console.log("Balance:", balance);
+eth.eth_getTransactionCount("0x34", "safe");
 
 import { EngineExecutionClient } from "./src";
 

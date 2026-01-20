@@ -8,17 +8,12 @@
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"src"
-	],
 	"keywords": [
 		"eth",
 		"rpc",
 		"ethereum",
 		"engine-api",
-		"execution-apis",
-		"consensus"
+		"execution-apis"
 	],
 	"homepage": "https://github.com/mmsaki/eth-libs/tree/main/packages/eth-rpc",
 	"repository": {
@@ -46,6 +41,6 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"@msaki/jsonrpc": "workspace:jsonrpc"
+		"@msaki/jsonrpc": "^0.2.0"
 	}
 }
