@@ -22,8 +22,7 @@
 	"scripts": {
 		"build": "tsc -p tsconfig.json",
 		"publish": "bun run build && bun publish --access public",
-		"format": "bun biome format --write",
-		"lint": "bun biome lint --write"
+		"format": "bun biome format --write"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.11",
