@@ -3,8 +3,8 @@ import { initializeRpcClient, JsonRpcClient } from "@msaki/jsonrpc";
 export class EngineExecutionClient {
 	private client: JsonRpcClient;
 
-	constructor(url: string) {
-		this.client = initializeRpcClient(url);
+	constructor(url: string, jwt_token: string) {
+		this.client = initializeRpcClient(url, jwt_token);
 	}
 
 	// eth/transaction

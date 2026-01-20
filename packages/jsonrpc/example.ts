@@ -25,6 +25,6 @@ console.log("JSON-RPC sever on http://localhost:4444");
 import { initializeRpcClient } from "./src";
 
 const url = "http://localhost:4444";
-const client = initializeRpcClient(url, process.env.JWT_TOKEN);
+const client = initializeRpcClient(url);
 const result = await client.call("ping", []);
 console.log(result);
