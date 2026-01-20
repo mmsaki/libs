@@ -38,7 +38,7 @@ Bun.serve({
 console.log("JSON-RPC sever on http://localhost:4444")
 ```
 
-### PRC Client
+### RPC Client
 
 ```ts
 import { initializeRpcClient } from "@msaki/jsonrpc";
