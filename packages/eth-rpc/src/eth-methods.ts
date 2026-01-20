@@ -29,6 +29,11 @@ export enum Methods {
 	eth_getFilterChanges = "eth_getFilterChanges",
 	eth_getFilterLogs = "eth_getFilterLogs",
 	eth_getLogs = "eth_getLogs",
+	// eth/feeMarket
+	eth_gasPrice = "eth_gasPrice",
+	eth_blobBaseFee = "eth_blobBaseFee",
+	eth_maxPriorityFeePerGas = "eth_maxPriorityFeePerGas",
+	eth_feeHistory = "eth_feeHistory",
 }
 
 export class EthExecutionClient {
@@ -159,5 +164,26 @@ export class EthExecutionClient {
 		filter: EthSchema.Filter,
 	): Promise<EthSchema.FilterResults> {
 		return await this.client.call(Methods.eth_getLogs, [filter]);
+	}
+	// eth/feeMarket
+	async eth_gasPrice(): Promise<EthSchema.Uint> {
+		return await this.client.call(Methods.eth_gasPrice, []);
+	}
+	async eth_blobBaseFee(): Promise<EthSchema.Uint> {
+		return await this.client.call(Methods.eth_blobBaseFee, []);
+	}
+	async eth_maxPriorityFeePerGas(): Promise<EthSchema.Uint> {
+		return await this.client.call(Methods.eth_maxPriorityFeePerGas, []);
+	}
+	async eth_feeHistory(
+		blockCount: EthSchema.Uint,
+		newestBlock: EthSchema.BlockNumberOrTag,
+		rewardPercentiles: number[],
+	): Promise<EthSchema.FeeHistoryResults> {
+		return await this.client.call(Methods.eth_feeHistory, [
+			blockCount,
+			newestBlock,
+			rewardPercentiles,
+		]);
 	}
 }
