@@ -1,37 +1,38 @@
 {
-  "name": "@msaki/eth-rpc",
-  "author": "Meek Msaki",
-  "version": "0.1.0",
-  "license": "MIT",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mmsaki/libs.git",
-    "directory": "packages/eth-rpc"
-  },
-  "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  },
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "publish": "bun run build && bun publish --access public",
-    "lint": "tsc"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-    "@msaki/jsonrpc": "workspace:jsonrpc"
-  }
+	"name": "@msaki/eth-rpc",
+	"author": "Meek Msaki",
+	"version": "0.1.0",
+	"license": "MIT",
+	"type": "module",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"src"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mmsaki/libs.git",
+		"directory": "packages/eth-rpc"
+	},
+	"publishConfig": {
+		"access": "public",
+		"directory": "dist"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"publish": "bun run build && bun publish --access public",
+		"format": "bun biome format --write"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.11",
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@msaki/jsonrpc": "workspace:jsonrpc"
+	}
 }
