@@ -39,6 +39,13 @@ export enum Methods {
 	eth_estimateGas = "eth_estimateGas",
 	eth_createAccessList = "eth_createAccessList",
 	eth_simulateV1 = "eth_simulateV1",
+	// eth/client
+	eth_chainId = "eth_chainId",
+	eth_syncing = "eth_syncing",
+	eth_coinbase = "eth_coinbase",
+	eth_accounts = "eth_accounts",
+	eth_blockNumber = "eth_blockNumber",
+	net_version = "net_version",
 }
 
 export class EthExecutionClient {
@@ -221,5 +228,24 @@ export class EthExecutionClient {
 		blockTag: EthSchema.BlockNumberOrTagOrHash,
 	): Promise<EthSchema.EthSimulateResult> {
 		return await this.client.call(Methods.eth_simulateV1, [payload, blockTag]);
+	}
+	// eth/client
+	async eth_chainId(): Promise<EthSchema.Uint> {
+		return await this.client.call(Methods.eth_chainId, []);
+	}
+	async eth_syncing(): Promise<EthSchema.SyncingStatus> {
+		return await this.client.call(Methods.eth_syncing, []);
+	}
+	async eth_coinbase(): Promise<EthSchema.Address> {
+		return await this.client.call(Methods.eth_coinbase, []);
+	}
+	async eth_accounts(): Promise<EthSchema.Addresses> {
+		return await this.client.call(Methods.eth_accounts, []);
+	}
+	async eth_blockNumber(): Promise<EthSchema.Uint> {
+		return await this.client.call(Methods.eth_blockNumber, []);
+	}
+	async net_version(): Promise<EthSchema.UintDecimal> {
+		return await this.client.call(Methods.net_version, []);
 	}
 }

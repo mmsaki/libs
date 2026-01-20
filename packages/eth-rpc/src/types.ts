@@ -14,7 +14,7 @@ export type Ratio = number;
 export type Uint = Hex;
 export type Uint64 = Hex;
 export type Uint256 = Hex;
-export type UintDecimal = number;
+export type UintDecimal = string; // e.g '1'
 export type Hash32 = Hex;
 export type NotFound = null;
 
