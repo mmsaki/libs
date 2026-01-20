@@ -8,7 +8,9 @@
   ],
   "scripts": {
     "build:jsonrpc": "cd packages/jsonrpc && bun run build",
+    "build:eth-rpc": "cd packages/eth-rpc && bun run build",
     "publish:jsonrpc": "cd packages/jsonrpc && bun run publish",
+    "publish:eth-rpc": "cd packages/eth-rpc && bun run publish",
     "start:mcpwallet": "cd packages/mcpwallet && bun run start",
     "dev:mcpwallet": "cd packages/mcpwallet && bun run dev",
     "stdio:mcpwallet": "cd packages/mcpwallet && bun run stdio",
