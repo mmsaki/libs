@@ -2,7 +2,7 @@
 	"name": "@msaki/jsonrpc",
 	"description": "A minimal jsonrpc spec implementation.",
 	"author": "Meek Msaki",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
