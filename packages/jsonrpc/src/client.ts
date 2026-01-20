@@ -30,3 +30,16 @@ export class JsonRpcClient {
     return this.send(request)
   }
 }
+
+export function initializeRpcClient(url: string): JsonRpcClient {
+  const client = new JsonRpcClient(async (req: JsonRpcRequest<unknown>) => {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req)
+    });
+
+    return (await res.json()) as JsonRpcResponse<unknown, number>
+  });
+  return client;
+}

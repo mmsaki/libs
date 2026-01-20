@@ -41,6 +41,18 @@ console.log("JSON-RPC sever on http://localhost:4444")
 ### PRC Client
 
 ```ts
+import { initializeRpcClient } from "@msaki/jsonrpc";
+const url = "http://localhost:4444";
+const client = initializeRpcClient(url);
+const result = client.call(
+  "rpc_method",
+  [1, 2]
+);
+```
+
+Or
+
+```ts
 import { JsonRpcClient } from "@msaki/jsonrpc";
 import type {
   JsonRpcRequest,
@@ -49,13 +61,17 @@ import type {
 
 const url = "http://localhost:4444";
 
-const client = new JsonRpcClient(async (req: JsonRpcRequest) => {
+const client = new JsonRpcClient(async (req: JsonRpcRequest<unknown>) => {
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(req)
   });
 
-  return (await res.json()) as JsonRpcResponse
+  return (await res.json()) as JsonRpcResponse<unknown, number>
 });
+const result = client.call(
+  "rpc_method",
+  [1, 2]
+);
 ```

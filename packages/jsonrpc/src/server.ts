@@ -1,12 +1,12 @@
-import type { JsonRpcResponse,  JsonRpcRequest } from "./types";
+import type { JsonRpcResponse, JsonRpcRequest } from "./types";
 
 export enum JsonRpcErrorCodes {
-  INVALID_REQUEST  = -32600,
+  INVALID_REQUEST = -32600,
   METHOD_NOT_FOUND = -32601,
-  INVALID_PARAMS   = -32602,
-  INTERNAL_ERROR   = -32603,
-  PARSE_ERROR      = -32700,
-  REQUEST_ABORTED  = -32800,
+  INVALID_PARAMS = -32602,
+  INTERNAL_ERROR = -32603,
+  PARSE_ERROR = -32700,
+  REQUEST_ABORTED = -32800,
 }
 export type Handler<Result> = (params: any) => any | Promise<Result>
 
@@ -18,7 +18,7 @@ export class JsonRpcServer {
   }
 
   async handle<Result, Method = string>(
-    raw: unknown, 
+    raw: unknown,
   ): Promise<JsonRpcResponse<Result, JsonRpcErrorCodes | number> | JsonRpcResponse<Result, JsonRpcErrorCodes | number>[] | null> {
     // handle batch
     if (Array.isArray(raw)) {
@@ -28,7 +28,7 @@ export class JsonRpcServer {
       const responses = await Promise.all(
         raw.map(item => this.handle(item))
       )
-        const filtered = responses.filter(
+      const filtered = responses.filter(
         (r): r is JsonRpcResponse<Result, JsonRpcErrorCodes | number> => r !== null
       )
       return filtered.length > 0 ? filtered : null
@@ -39,17 +39,17 @@ export class JsonRpcServer {
 
     if (
       typeof req !== "object" ||
-        req === null ||
-        req.jsonrpc !== "2.0" ||
-        typeof req.method !== "string"
+      req === null ||
+      req.jsonrpc !== "2.0" ||
+      typeof req.method !== "string"
     ) {
       return this.error(null, JsonRpcErrorCodes.INVALID_REQUEST, "Invalid request")
     }
-    
-    const id = 
+
+    const id =
       typeof (req as any)?.id === "string" ||
-      typeof (req as any)?.id === "number" ||
-      (req as any)?.id === null ? (req as any).id : null
+        typeof (req as any)?.id === "number" ||
+        (req as any)?.id === null ? (req as any).id : null
 
     const handler = this.methods.get(req.method)
     if (!handler) {
