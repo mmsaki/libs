@@ -127,6 +127,12 @@ console.log('Balance:', balance);
   - [x] eth_getUncleCountByBlockHash
   - [x] eth_getUncleCountByBlockNumber
   - [x] eth_getBlockReceipts
+- [x] debug
+  - [x] debug_getRawHeader = "debug_getRawHeader",
+  - [x] debug_getRawBlock = "debug_getRawBlock",
+  - [x] debug_getRawTransaction = "debug_getRawTransaction",
+  - [x] debug_getRawReceipts = "debug_getRawReceipts",
+  - [x] debug_getBadBlocks = "debug_getBadBlocks",
 
 ### Ethereum Engine Api
 
