@@ -1,11 +1,11 @@
 # jsonrpc
 
-## `@msaki/jsonrpc`
+## `@asyncswap/jsonrpc`
 
 A minimal jsonrpc server and client library.
 
 ```sh
-bun add @msaki/jsonrpc
+bun add @asyncswap/jsonrpc
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ bun add @msaki/jsonrpc
 ### RPC Server
 
 ```ts
-import { JsonRpcServer } from "@msaki/jsonrpc";
+import { JsonRpcServer } from "@asyncswap/jsonrpc";
 
 const server = new JsonRpcServer()
 
@@ -41,7 +41,7 @@ console.log("JSON-RPC running on http://localhost:4444")
 ### RPC Client
 
 ```ts
-import { initializeRpcClient } from "@msaki/jsonrpc";
+import { initializeRpcClient } from "@asyncswap/jsonrpc";
 const url = "http://localhost:4444";
 const client = initializeRpcClient(url);
 const result = await client.call(

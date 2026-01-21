@@ -1,5 +1,5 @@
 {
-	"name": "@msaki/eth-rpc",
+	"name": "@asyncswap/eth-rpc",
 	"description": "A library for ethereum execution clients apis.",
 	"author": "Meek Msaki",
 	"version": "0.3.0",
@@ -15,14 +15,14 @@
 		"engine-api",
 		"execution-apis"
 	],
-	"homepage": "https://github.com/mmsaki/eth-libs/tree/main/packages/eth-rpc",
+	"homepage": "https://github.com/asyncswap/eth-libs/tree/main/packages/eth-rpc",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mmsaki/eth-libs.git",
+		"url": "git+https://github.com/asyncswap/eth-libs.git",
 		"directory": "packages/eth-rpc"
 	},
 	"bugs": {
-		"url": "https://github.com/mmsaki/eth-libs/issues"
+		"url": "https://github.com/asyncswap/eth-libs/issues"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -41,6 +41,6 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"@msaki/jsonrpc": "^0.3.0"
+		"@asyncswap/jsonrpc": "^0.3.0"
 	}
 }

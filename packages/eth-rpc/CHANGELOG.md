@@ -1,4 +1,4 @@
-# @msaki/eth-rpc
+# @asyncswap/eth-rpc
 
 ## 0.3.0
 
@@ -53,4 +53,4 @@
 - Updated dependencies [00ba692]
 - Updated dependencies [07dc4e5]
 - Updated dependencies [ded3e6b]
-  - @msaki/jsonrpc@0.3.0
+  - @asyncswap/jsonrpc@0.3.0

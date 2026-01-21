@@ -1,11 +1,11 @@
 # eth-rpc
 
-## `@msaki/eth-rpc`
+## `@asyncswap/eth-rpc`
 
 A complete library for ethereum rpc clients apis.
 
 ```sh
-bun add @msaki/eth-rpc
+bun add @asyncswap/eth-rpc
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ bun add @msaki/eth-rpc
 ### Ethereum Execution Client Api
 
 ```ts
-import { EthExecutionClient } from '@msaki/eth-rpc';
+import { EthExecutionClient } from '@asyncswap/eth-rpc';
 
 const url = 'http://localhost:8545'
 const eth = new EthExecutionClient(url);
@@ -28,7 +28,7 @@ console.log('Balance:', balance);
 ### Ethereum Engine Api
 
 ```ts
-import { EngineExecutionClient } from "@msaki/eth-rpc";
+import { EngineExecutionClient } from "@asyncswap/eth-rpc";
 
 const engineUrl = "https://localhost:8551";
 const engine = new EngineExecutionClient(engineUrl, process.env.JWT_TOKEN!);

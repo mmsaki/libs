@@ -1,5 +1,5 @@
 {
-	"name": "@msaki/jsonrpc",
+	"name": "@asyncswap/jsonrpc",
 	"description": "A minimal jsonrpc spec implementation.",
 	"author": "Meek Msaki",
 	"version": "0.3.1",
@@ -13,14 +13,14 @@
 		"rpc",
 		"bun"
 	],
-	"homepage": "https://github.com/mmsaki/eth-libs/tree/main/packages/jsonrpc",
+	"homepage": "https://github.com/asyncswap/eth-libs/tree/main/packages/jsonrpc",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mmsaki/eth-libs.git",
+		"url": "git+https://github.com/asyncswap/eth-libs.git",
 		"directory": "packages/jsonrpc"
 	},
 	"bugs": {
-		"url": "https://github.com/mmsaki/eth-libs/issues"
+		"url": "https://github.com/asyncswap/eth-libs/issues"
 	},
 	"publishConfig": {
 		"access": "public",

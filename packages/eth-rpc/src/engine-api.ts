@@ -1,4 +1,4 @@
-import { initializeRpcClient, JsonRpcClient } from "@msaki/jsonrpc";
+import { initializeRpcClient, JsonRpcClient } from "@asyncswap/jsonrpc";
 
 export class EngineExecutionClient {
 	private client: JsonRpcClient;

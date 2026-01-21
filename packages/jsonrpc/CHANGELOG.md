@@ -1,4 +1,4 @@
-# @msaki/jsonrpc
+# @asyncswap/jsonrpc
 
 ## 0.3.1
 

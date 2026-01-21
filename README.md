@@ -2,18 +2,18 @@
 
 ## Core
 
-### [`@msaki/jsonrpc`](./packages/jsonrpc)
+### [`@asyncswap/jsonrpc`](./packages/jsonrpc)
 
 A minimal jsonrpc spec implementation.
 
 ```sh
-bun add @msaki/jsonrpc
+bun add @asyncswap/jsonrpc
 ```
 
 ### RPC Server
 
 ```ts
-import { JsonRpcServer } from "@msaki/jsonrpc";
+import { JsonRpcServer } from "@asyncswap/jsonrpc";
 
 const server = new JsonRpcServer()
 
@@ -41,7 +41,7 @@ console.log("JSON-RPC running on http://localhost:4444")
 ### RPC Client
 
 ```ts
-import { initializeRpcClient } from "@msaki/jsonrpc";
+import { initializeRpcClient } from "@asyncswap/jsonrpc";
 const url = "http://localhost:4444";
 const client = initializeRpcClient(url, process.env.JWT_TOKEN);
 const result = await client.call(
@@ -51,12 +51,12 @@ const result = await client.call(
 console.log(result)
 ```
 
-### [`@msaki/eth-rpc`](./packages/eth-rpc)
+### [`@asyncswap/eth-rpc`](./packages/eth-rpc)
 
 A library for ethereum execution clients apis.
 
 ```sh
-bun add @msaki/eth-rpc
+bun add @asyncswap/eth-rpc
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ bun add @msaki/eth-rpc
 ### Ethereum Execution Client Api
 
 ```ts
-import { EthExecutionClient } from '@msaki/eth-rpc';
+import { EthExecutionClient } from '@asyncswap/eth-rpc';
 
 const url = 'http://localhost:8545'
 const eth = new EthExecutionClient(url);
@@ -137,7 +137,7 @@ console.log('Balance:', balance);
 ### Ethereum Engine Api
 
 ```ts
-import { EngineExecutionClient } from "@msaki/eth-rpc";
+import { EngineExecutionClient } from "@asyncswap/eth-rpc";
 
 const engineUrl = "https://localhost:8551";
 const engine = new EngineExecutionClient(engineUrl, process.env.JWT_TOKEN!);

@@ -1,32 +1,32 @@
 {
-  "name": "@msaki/mcpwallet",
-  "version": "0.0.1",
-  "author": "Meek Msaki",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mmsaki/libs/",
-    "directory": "packages/mcpwallet"
-  },
-  "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  },
-  "scripts": {
-    "dev": "bun run --hot src/server.ts",
-    "start": "bun dist/server.js",
-    "build": "tsup src/server.ts --format cjs,esm --dts",
-    "publish": "bun run build && npm publish --access public",
-    "lint": "tsc"
-  },
-  "dependencies": {
-    "@msaki/jsonrpc": "workspace:jsonrpc"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "tsup": "8.5.1"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+	"name": "@asyncswap/mcpwallet",
+	"version": "0.0.1",
+	"author": "Meek Msaki",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/asyncswap/eth-libs/",
+		"directory": "packages/mcpwallet"
+	},
+	"publishConfig": {
+		"access": "public",
+		"directory": "dist"
+	},
+	"scripts": {
+		"dev": "bun run --hot src/server.ts",
+		"start": "bun dist/server.js",
+		"build": "tsup src/server.ts --format cjs,esm --dts",
+		"publish": "bun run build && npm publish --access public",
+		"lint": "tsc"
+	},
+	"dependencies": {
+		"@asyncswap/jsonrpc": "workspace:jsonrpc"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"tsup": "8.5.1"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
 }
