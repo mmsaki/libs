@@ -1,7 +1,7 @@
 import { initializeRpcClient, JsonRpcClient } from "@asyncswap/jsonrpc";
 
 export class EthExecutionClient {
-	private client: JsonRpcClient;
+	protected client: JsonRpcClient;
 
 	constructor(url: string) {
 		this.client = initializeRpcClient(url);
