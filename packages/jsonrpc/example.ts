@@ -22,9 +22,9 @@ Bun.serve({
 
 console.log("JSON-RPC running on http://localhost:4444");
 
-import { initializeRpcClient } from "./src";
+import { JsonRpcClient } from "./src";
 
 const url = "http://localhost:4444";
-const client = initializeRpcClient(url);
+const client = new JsonRpcClient(url);
 const result = await client.call("ping", []);
 console.log(result);
