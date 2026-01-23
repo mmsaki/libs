@@ -1,6 +1,6 @@
 import { EthExecutionClient } from "./eth-api";
 
-export class MevBuilder extends EthExecutionClient {
+export class EthFlashbotsClient extends EthExecutionClient {
 	constructor(url: string) {
 		super(url);
 	}

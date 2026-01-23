@@ -17,3 +17,8 @@ const engine = new EngineExecutionClient(engineUrl, process.env.JWT_TOKEN!);
 const payload = engine.engine_getPayloadV1("0x1");
 
 console.log(payload);
+
+import { EthFlashbotsClient } from "./src";
+
+const rpc = "https://relay.flashbots.net";
+const fc = new EthFlashbotsClient(rpc);
