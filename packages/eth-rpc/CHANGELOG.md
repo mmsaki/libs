@@ -8,13 +8,13 @@
 - Updated dependencies [9512db5]
   - @asyncswap/jsonrpc@0.4.2
 
-## 0.5.1
+## 0.4.1
 
 ### Patch Changes
 
 - 2598f09: updates docs
 
-## 0.5.0
+## 0.4.0
 
 ### Minor Changes
 

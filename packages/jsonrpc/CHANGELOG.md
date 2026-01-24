@@ -6,16 +6,16 @@
 
 - 9512db5: update documentation
 
-## 0.5.0
+## 0.4.0
 
 ### Minor Changes
 
-- 7e8300c: changes api for jsonrpc contruction
+- 7e8300c: changes api for jsonrpc construction
 
 ### Patch Changes
 
 - 43de065: update docs
-- 7126afa: add `otherHeaders` to inializedClient calls
+- 7126afa: add `otherHeaders` to initializedClient calls
 
 ## 0.3.1
 
