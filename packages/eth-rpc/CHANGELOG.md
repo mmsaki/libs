@@ -1,5 +1,11 @@
 # @asyncswap/eth-rpc
 
+## 0.5.1
+
+### Patch Changes
+
+- 2598f09: updates docs
+
 ## 0.5.0
 
 ### Minor Changes
