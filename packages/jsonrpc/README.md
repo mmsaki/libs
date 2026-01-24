@@ -41,12 +41,10 @@ console.log("JSON-RPC running on http://localhost:4444")
 ### RPC Client
 
 ```ts
-import { initializeRpcClient } from "@asyncswap/jsonrpc";
+
+import { JsonRpcClient } from "@asyncswap/jsonrpc";
 const url = "http://localhost:4444";
-const client = initializeRpcClient(url);
-const result = await client.call(
-  "ping",
-  []
-);
-console.log(result)
+const client = new JsonRpcClient(url);
+const result = await client.call("ping", []);
+console.log(result);
 ```

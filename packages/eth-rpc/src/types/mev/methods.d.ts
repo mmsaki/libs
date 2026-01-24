@@ -19,6 +19,7 @@ declare global {
 		flashbots_getMevRefundTotalByRecipient = "flashbots_getMevRefundTotalByRecipient",
 		flashbots_getMevRefundTotalBySender = "flashbots_getMevRefundTotalBySender",
 	}
+
 	export enum BuilderNetMethods {
 		eth_sendBundle = "eth_sendBundle",
 		eth_sendRawTransaction = "eth_sendRawTransaction",
