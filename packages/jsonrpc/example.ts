@@ -26,5 +26,5 @@ import { JsonRpcClient } from "./src";
 
 const url = "http://localhost:4444";
 const client = new JsonRpcClient(url);
-const result = await client.call("ping", []);
+const result = await client.call(client.buildRequest("ping", []));
 console.log(result);

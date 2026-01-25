@@ -1,11 +1,3 @@
-export enum JsonRpcErrorCodes {
-	INVALID_REQUEST = -32600,
-	METHOD_NOT_FOUND = -32601,
-	INVALID_PARAMS = -32602,
-	INTERNAL_ERROR = -32603,
-	PARSE_ERROR = -32700,
-	REQUEST_ABORTED = -32800,
-}
 export type Handler<Result> = (params: any) => any | Promise<Result>;
 
 export class JsonRpcServer {
