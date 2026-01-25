@@ -2,11 +2,15 @@
 
 A TypeScript client for flashbots relay rpc.
 
+## Installation
+
 ```sh
 bun add @asyncswap/flashbots-rpc
 ```
 
-## Flashbots Client API
+## Quick Start
+
+### Flashbots Client API
 
 ```ts
 import { FlashbotsClient } from "@asyncswap/flashbots-rpc";
