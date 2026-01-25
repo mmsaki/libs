@@ -42,7 +42,7 @@ import { EngineExecutionClient } from '@asyncswap/eth-rpc';
 
 const engineUrl = 'https://localhost:8551';
 const engine = new EngineExecutionClient(engineUrl, process.env.JWT_TOKEN!);
-const payload = engine.engine_getPayloadV1("0x1");
+const payload = await engine.engine_getPayloadV1("0x1");
 
 console.log(payload);
 
