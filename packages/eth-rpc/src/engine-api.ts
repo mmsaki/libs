@@ -1,37 +1,19 @@
-import { JsonRpcClient } from "@asyncswap/jsonrpc";
+import { BaseClient } from "./base";
+
+export class EngineExecutionClient extends BaseClient<EngineMethodsSpec> {
+	constructor(url: string, jwt_token: string) {
+		super(url);
+		this.headers = {
+			Authorization: `Bearer ${jwt_token}`,
+		};
+	}
+}
 
 export type EngineRpcMethods<
 	T extends Record<string, { params: unknown[]; result: unknown }>,
 > = {
 		[K in keyof T]: (...params: T[K]["params"]) => Promise<T[K]["result"]>;
 	};
-
-export class EngineExecutionClient {
-	rpc: JsonRpcClient;
-	headers: Record<string, string>;
-
-	constructor(url: string, jwt_token: string) {
-		this.headers = {
-			Authorization: `Bearer ${jwt_token}`,
-		};
-		this.rpc = new JsonRpcClient(url);
-
-		return new Proxy(this, {
-			get: (_, method: string) => {
-				return (...params: unknown[]) =>
-					this.rpc.call(this.rpc.buildRequest(method, params), this.headers);
-			},
-		});
-	}
-
-	setHeaders(headers: Record<string, string>) {
-		this.headers = {
-			...this.headers,
-			...headers,
-		};
-		return this;
-	}
-}
 
 export interface EngineExecutionClient
 	extends EngineRpcMethods<EngineMethodsSpec> { }
