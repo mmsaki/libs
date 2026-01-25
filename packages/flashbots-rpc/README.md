@@ -38,6 +38,10 @@ console.log(result);
 
 - [Fashbots JSON-RPC API Endpoints](https://docs.flashbots.net/flashbots-auction/advanced/rpc-endpoint)
 
+## Dependencies
+
+- `@asyncswap/eth-rpc` - lib for ethereum execution client JSON-RPC 2.0 api.
+
 ## License
 
 MIT
