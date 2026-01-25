@@ -1,3 +1,4 @@
+import { JsonRpcErrorCode } from "./error";
 export type Handler<Result> = (params: any) => any | Promise<Result>;
 
 export class JsonRpcServer {
@@ -10,8 +11,8 @@ export class JsonRpcServer {
 	async handle<Result, Method = string>(
 		raw: unknown,
 	): Promise<
-		| JsonRpcResponse<Result, JsonRpcErrorCodes | number>
-		| JsonRpcResponse<Result, JsonRpcErrorCodes | number>[]
+		| JsonRpcResponse<Result, JsonRpcErrorCode | number>
+		| JsonRpcResponse<Result, JsonRpcErrorCode | number>[]
 		| null
 	> {
 		// handle batch
@@ -19,13 +20,13 @@ export class JsonRpcServer {
 			if (raw.length === 0) {
 				return this.error(
 					null,
-					JsonRpcErrorCodes.INVALID_REQUEST,
+					JsonRpcErrorCode.INVALID_REQUEST,
 					"Invalid request",
 				);
 			}
 			const responses = await Promise.all(raw.map((item) => this.handle(item)));
 			const filtered = responses.filter(
-				(r): r is JsonRpcResponse<Result, JsonRpcErrorCodes | number> =>
+				(r): r is JsonRpcResponse<Result, JsonRpcErrorCode | number> =>
 					r !== null,
 			);
 			return filtered.length > 0 ? filtered : null;
@@ -42,7 +43,7 @@ export class JsonRpcServer {
 		) {
 			return this.error(
 				null,
-				JsonRpcErrorCodes.INVALID_REQUEST,
+				JsonRpcErrorCode.INVALID_REQUEST,
 				"Invalid request",
 			);
 		}
@@ -60,7 +61,7 @@ export class JsonRpcServer {
 				? null
 				: this.error(
 					req.id,
-					JsonRpcErrorCodes.METHOD_NOT_FOUND,
+					JsonRpcErrorCode.METHOD_NOT_FOUND,
 					"Method not found",
 				);
 		}
@@ -76,7 +77,7 @@ export class JsonRpcServer {
 		} catch (err) {
 			return this.error(
 				req.id ?? null,
-				JsonRpcErrorCodes.INTERNAL_ERROR,
+				JsonRpcErrorCode.INTERNAL_ERROR,
 				"Internal error",
 				err instanceof Error ? err.message : err,
 			);
@@ -85,10 +86,10 @@ export class JsonRpcServer {
 
 	private error<Result, Method = string>(
 		id: JsonRpcRequest<Method>["id"],
-		code: JsonRpcErrorCodes | number,
+		code: JsonRpcErrorCode | number,
 		message: string,
 		data?: unknown,
-	): JsonRpcResponse<Result, JsonRpcErrorCodes | number> {
+	): JsonRpcResponse<Result, JsonRpcErrorCode | number> {
 		return {
 			jsonrpc: "2.0",
 			error: { code, message, data },

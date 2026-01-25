@@ -1,3 +1,4 @@
+import { JsonRpcErrorCode } from "./error";
 export class JsonRpcClient {
 	private id = 0;
 
@@ -37,12 +38,10 @@ export class JsonRpcClient {
 	private async request(
 		req: JsonRpcRequest<unknown> | JsonRpcRequest<unknown>[],
 		customHeaders?: Record<string, string>,
-		timeout: number = 5000,
 	): Promise<
 		JsonRpcResponse<unknown, number> | JsonRpcResponse<unknown, number>[]
 	> {
 		const controller = new AbortController();
-		const timeoutId = setTimeout(() => controller.abort(), timeout);
 		try {
 			const headers: Record<string, string> = {
 				"Content-Type": "application/json",
@@ -59,21 +58,10 @@ export class JsonRpcClient {
 				| JsonRpcResponse<unknown, number>
 				| JsonRpcResponse<unknown, number>[];
 		} catch (err) {
-			if (err instanceof Error && err.name === "AbortError") {
-				return {
-					jsonrpc: "2.0",
-					error: {
-						code: JsonRpcErrorCodes.REQUEST_ABORTED,
-						message: `Request Aborted. Timeout after ${timeout}ms.`,
-					},
-					id: null,
-				};
-			}
-			clearTimeout(timeoutId);
 			return {
 				jsonrpc: "2.0",
 				error: {
-					code: JsonRpcErrorCodes.REQUEST_FAILED,
+					code: JsonRpcErrorCode.REQUEST_FAILED,
 					message: `Request failed: ${err}`,
 				},
 				id: null,
