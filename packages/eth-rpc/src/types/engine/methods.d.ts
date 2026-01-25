@@ -1,5 +1,11 @@
 declare global {
 	export type EngineMethodsSpec = {
+		// identification
+		engine_getClientVersionV1: {
+			params: [ClientVersionV1];
+			result: ClientVersionV1[];
+		};
+		// share methods
 		eth_blockNumber: { params: []; result: Uint };
 		eth_call: {
 			params: [GenericTransaction, BlockNumberOrTagOrHash];
