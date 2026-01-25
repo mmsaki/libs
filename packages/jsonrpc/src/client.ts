@@ -1,11 +1,14 @@
 import { JsonRpcErrorCode } from "./error";
-export class JsonRpcClient {
+
+export class JsonRpcClient<MethodsSpec extends RpcSpecBase> {
 	private id = 0;
 
 	constructor(private url: string) { }
 
-	async call<Result = unknown, E = unknown>(
-		request: JsonRpcRequest | JsonRpcRequest[],
+	async call<Method extends keyof MethodsSpec, Result = unknown, E = unknown>(
+		request:
+			| JsonRpcRequest<Method, MethodsSpec[Method]["params"]>
+			| JsonRpcRequest<Method, MethodsSpec[Method]["params"]>[],
 		headers?: Record<string, string>,
 	): Promise<Result | Result[] | E> {
 		const response = await this.request(request, headers);
@@ -23,17 +26,22 @@ export class JsonRpcClient {
 		}
 	}
 
-	buildRequest(method: string, params: unknown[] = []): JsonRpcRequest {
+	buildRequest<Method extends keyof MethodsSpec>(
+		method: Method,
+		params: MethodsSpec[Method]["params"],
+	): JsonRpcRequest<Method, MethodsSpec[Method]["params"]> {
 		return {
-			jsonrpc: "2.0" as const,
+			jsonrpc: "2.0",
 			method,
 			params,
 			id: ++this.id,
 		};
 	}
 
-	private async request(
-		req: JsonRpcRequest | JsonRpcRequest[],
+	private async request<Method extends keyof MethodsSpec>(
+		req:
+			| JsonRpcRequest<Method, MethodsSpec[Method]["params"]>
+			| JsonRpcRequest<Method, MethodsSpec[Method]["params"]>[],
 		customHeaders?: Record<string, string>,
 	): Promise<
 		JsonRpcResponse<unknown, number> | JsonRpcResponse<unknown, number>[]
@@ -66,8 +74,11 @@ export class JsonRpcClient {
 		}
 	}
 
-	async notify(method: string, params?: unknown[]) {
-		const request: JsonRpcRequest = {
+	async notify<Method extends keyof MethodsSpec>(
+		method: Method,
+		params?: MethodsSpec[Method]["params"],
+	) {
+		const request: JsonRpcRequest<Method, MethodsSpec[Method]["params"]> = {
 			jsonrpc: "2.0",
 			method,
 			params,
