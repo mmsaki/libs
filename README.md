@@ -62,10 +62,10 @@ bun add @asyncswap/eth-rpc
 ### Execution Client Api
 
 ```ts
-import { EthExecutionClient } from '@asyncswap/eth-rpc';
+import { ExecutionClient } from '@asyncswap/eth-rpc';
 
 const url = 'http://localhost:8545'
-const eth = new EthExecutionClient(url);
+const eth = new ExecutionClient(url);
 
 const balance = await eth.eth_getBalance(
   "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
