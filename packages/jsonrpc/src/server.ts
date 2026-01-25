@@ -1,10 +1,10 @@
 import { JsonRpcErrorCode } from "./error";
-export type Handler<Result> = (params: any) => any | Promise<Result>;
+export type Handler<Params, Result> = (params: Params) => Promise<Result>;
 
 export class JsonRpcServer {
-	private methods = new Map<string, Handler<any>>();
+	private methods = new Map<string, Handler<any, any>>();
 
-	register(method: string, handler: Handler<any>) {
+	register<Params, Result>(method: string, handler: Handler<Params, Result>) {
 		this.methods.set(method, handler);
 	}
 

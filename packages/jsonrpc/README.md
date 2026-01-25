@@ -53,8 +53,15 @@ await client.notify('log', ['Hello world']);
 
 #### Methods
 
-- `register(method: string, handler: Handler<any>)` - Register a method handler
+- `register<Result>(method: string, handler: Handler<Result>)` - Register a method handler
 - `handle(request: any)` - Process a JSON-RPC request
+
+***Types***:
+
+- `type Handler<Params, Result> = (params: Params) => Promise<Result>` - type of rpc function dispatched on the server.
+- `type JsonRpcResponse<Result, ErrorCode> =
+  | JsonRpcSuccess<Result>
+  | JsonRpcError<ErrorCode>;` - JSON-RPC response type returns either a result or error.
 
 #### Error Codes
 
