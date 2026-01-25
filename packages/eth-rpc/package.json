@@ -2,7 +2,7 @@
 	"name": "@asyncswap/eth-rpc",
 	"description": "A library for ethereum execution clients apis.",
 	"author": "Meek Msaki",
-	"version": "0.4.6",
+	"version": "0.4.7",
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",

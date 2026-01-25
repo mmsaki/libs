@@ -41,6 +41,6 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@asyncswap/eth-rpc": "^0.4.6"
+    "@asyncswap/eth-rpc": "^0.4.7"
   }
 }

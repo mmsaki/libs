@@ -1,5 +1,29 @@
 # @asyncswap/eth-rpc
 
+## 0.4.7
+
+### Patch Changes
+
+- ff4e035: fix base client proxy
+
+  ```ts
+  setHeaders(...) {
+      this.headers = ...
+      return this; // ❌ returns the *target*
+  }
+  ```
+
+  The correct fix: return the receiver / proxy, not this
+
+  You already have access to the proxy inside the get trap via receiver.
+
+  So you must bind methods so that they return the proxy.
+
+  - setHeaders() mutates the target
+  - returns receiver (the proxy)
+  - chaining continues in proxy-land
+  - RPC methods remain visible
+
 ## 0.4.6
 
 ### Patch Changes
