@@ -53,7 +53,7 @@ await client.notify('log', ['Hello world']);
 
 #### Methods
 
-- `register<Result>(method: string, handler: Handler<Result>)` - Register a method handler
+- `register<Method, Params, Result>(method: Method, handler: Handler<Params, Result>)` - Register a method handler
 - `handle(request: any)` - Process a JSON-RPC request
 
 ***Types***:
@@ -85,8 +85,8 @@ enum JsonRpcErrorCodes {
 
 #### Methods
 
-- `call<Result, Error>(request, headers?)` - Make a JSON-RPC call
-- `notify(method, params?)` - Send a JSON-RPC notification
+- `call(request, headers?)` - Make a JSON-RPC call
+- `notify(method: Method, params?)` - Send a JSON-RPC notification
 - `buildRequest(method, params?)` - Build a JSON-RPC request object
 
 ## Examples
