@@ -1,5 +1,11 @@
 # @asyncswap/jsonrpc
 
+## 0.4.11
+
+### Patch Changes
+
+- 2f7dece: fixes build
+
 ## 0.4.10
 
 ### Patch Changes

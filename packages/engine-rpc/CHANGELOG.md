@@ -1,5 +1,13 @@
 # @asyncswap/engine-rpc
 
+## 0.0.7
+
+### Patch Changes
+
+- 2f7dece: fixes build
+- Updated dependencies [2f7dece]
+  - @asyncswap/jsonrpc@0.4.11
+
 ## 0.0.6
 
 ### Patch Changes

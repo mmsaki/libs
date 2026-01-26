@@ -2,7 +2,7 @@
 	"name": "@asyncswap/flashbots-rpc",
 	"description": "A library for flashbots relay rpc.",
 	"author": "Meek Msaki",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",
@@ -40,6 +40,6 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"@asyncswap/jsonrpc": "^0.4.10"
+		"@asyncswap/jsonrpc": "^0.4.11"
 	}
 }

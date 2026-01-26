@@ -1,5 +1,13 @@
 # @asyncswap/eth-rpc
 
+## 0.4.12
+
+### Patch Changes
+
+- 2f7dece: fixes build
+- Updated dependencies [2f7dece]
+  - @asyncswap/jsonrpc@0.4.11
+
 ## 0.4.11
 
 ### Patch Changes

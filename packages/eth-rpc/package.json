@@ -2,7 +2,7 @@
 	"name": "@asyncswap/eth-rpc",
 	"description": "A library for ethereum execution clients apis.",
 	"author": "Meek Msaki",
-	"version": "0.4.11",
+	"version": "0.4.12",
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",
@@ -40,6 +40,6 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"@asyncswap/jsonrpc": "^0.4.10"
+		"@asyncswap/jsonrpc": "^0.4.11"
 	}
 }

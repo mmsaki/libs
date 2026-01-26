@@ -2,7 +2,7 @@
 	"name": "@asyncswap/engine-rpc",
 	"description": "A library for Ethereum engine api JSON-RPC spec.",
 	"author": "Meek Msaki",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",
@@ -39,6 +39,6 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
-		"@asyncswap/jsonrpc": "^0.4.10"
+		"@asyncswap/jsonrpc": "^0.4.11"
 	}
 }
