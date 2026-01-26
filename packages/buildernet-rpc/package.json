@@ -15,6 +15,10 @@
 		"mev",
 		"json-rpc"
 	],
+	"files": [
+		"dist",
+		"src"
+	],
 	"homepage": "https://github.com/asyncswap/eth-libs/tree/main/packages/buildernet-rpc",
 	"repository": {
 		"type": "git",

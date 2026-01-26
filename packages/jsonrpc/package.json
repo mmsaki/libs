@@ -13,6 +13,10 @@
 		"rpc",
 		"bun"
 	],
+	"files": [
+		"dist",
+		"src"
+	],
 	"homepage": "https://github.com/asyncswap/eth-libs/tree/main/packages/jsonrpc",
 	"repository": {
 		"type": "git",

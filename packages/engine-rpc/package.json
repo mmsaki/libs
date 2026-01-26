@@ -14,6 +14,10 @@
 		"execution-client",
 		"json-rpc"
 	],
+	"files": [
+		"dist",
+		"src"
+	],
 	"homepage": "https://github.com/asyncswap/eth-libs/tree/main/packages/engine-rpc",
 	"repository": {
 		"type": "git",
