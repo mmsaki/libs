@@ -1,7 +1,5 @@
 import { JsonRpcClient } from "./client";
 
-export type RpcSpecBase = Record<string, RpcMethodSpec>;
-
 export abstract class BaseClient<MethodsSpec extends RpcSpecBase> {
 	rpc: JsonRpcClient<MethodsSpec>;
 	protected headers: Record<string, string> = {};
