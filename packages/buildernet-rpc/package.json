@@ -2,7 +2,7 @@
 	"name": "@asyncswap/buildernet-rpc",
 	"description": "A library for flashbots buildernet JSON-RPC api.",
 	"author": "Meek Msaki",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",
