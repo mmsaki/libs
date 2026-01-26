@@ -1,4 +1,4 @@
-import { BaseClient } from "@asyncswap/eth-rpc";
+import { BaseClient } from "@asyncswap/jsonrpc";
 
 export class FlashbotsClient extends BaseClient<FlashbotsMethodsSpec> {
   constructor(url: string) {
