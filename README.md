@@ -39,14 +39,12 @@ console.log("JSON-RPC running on http://localhost:4444")
 ### RPC Client
 
 ```ts
-import { initializeRpcClient } from "@asyncswap/jsonrpc";
+import { JsonRpcClient } from "@asyncswap/jsonrpc";
+
 const url = "http://localhost:4444";
-const client = initializeRpcClient(url, process.env.JWT_TOKEN);
-const result = await client.call(
-  "eth_ping",
-  []
-);
-console.log(result)
+const client = new JsonRpcClient(url);
+const result = await client.call(client.buildRequest("eth_ping", []));
+console.log(result);
 ```
 
 ## [`@asyncswap/eth-rpc`](./packages/eth-rpc)

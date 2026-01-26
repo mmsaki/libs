@@ -27,4 +27,13 @@ import { JsonRpcClient } from "./src";
 const url = "http://localhost:4444";
 const client = new JsonRpcClient(url);
 const result = await client.call(client.buildRequest("eth_ping", []));
-console.log(result);
+console.log(result); // pong
+
+const response = await server.handle({
+	jsonrpc: "2.0",
+	method: "eth_add",
+	params: [2, 3],
+	id: 1,
+});
+
+console.log(response); // { jsonrpc: '2.0', result: 5, id: 1 }

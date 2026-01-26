@@ -18,13 +18,13 @@ import { JsonRpcServer } from '@asyncswap/jsonrpc';
 const server = new JsonRpcServer();
 
 // Register methods
-server.register('add', ([a, b]: [number, number]) => a + b);
-server.register('ping', () => 'pong');
+server.register("eth_add", async ([a,b]: [number, number]) => a + b)
+server.register("eth_ping", async () => "pong")
 
 // Handle requests
 const response = await server.handle({
   jsonrpc: '2.0',
-  method: 'add',
+  method: 'eth_add',
   params: [2, 3],
   id: 1
 });
