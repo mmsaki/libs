@@ -74,6 +74,8 @@ console.log('Balance:', balance);
 
 ## [`@asyncswap/engine-rpc`](./packages/engine-rpc)
 
+A library for Ethereum engine api JSON-RPC spec.
+
 ### Engine Api
 
 ```ts
@@ -86,6 +88,8 @@ console.log(payload);
 ```
 
 ## [`@asyncswap/flashbots-rpc`](./packages/flashbots-rpc)
+
+A library for flashbots relay rpc.
 
 ### Flashbots Client API
 
@@ -113,6 +117,8 @@ console.log(result)
 ```
 
 ## [`@asyncswap/buildernet-rpc`](./packages/buildernet-rpc)
+
+A library for flashbots buildernet JSON-RPC api.
 
 ### BuilderNet Client API
 
