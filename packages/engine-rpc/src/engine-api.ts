@@ -10,9 +10,14 @@ export class EngineExecutionClient extends BaseClient<EngineMethodsSpec> {
 }
 
 export type EngineRpcMethods<
-  T extends Record<string, { params: readonly unknown[]; result: unknown }>,
+  MethodsSpec extends Record<
+    string,
+    { params: readonly unknown[]; result: unknown }
+  >,
 > = {
-    [K in keyof T]: (...params: T[K]["params"]) => Promise<T[K]["result"]>;
+    [Method in keyof MethodsSpec]: (
+      ...params: MethodsSpec[Method]["params"]
+    ) => Promise<MethodsSpec[Method]["result"]>;
   };
 
 export interface EngineExecutionClient

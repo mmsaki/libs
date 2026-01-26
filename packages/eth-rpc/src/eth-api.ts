@@ -7,15 +7,14 @@ export class ExecutionClient extends BaseClient<EthMethodsSpec> {
 }
 
 export type EthRpcMethods<
-	T extends Record<string, { params: readonly unknown[]; result: unknown }>,
+	MethodsSpec extends Record<
+		string,
+		{ params: readonly unknown[]; result: unknown }
+	>,
 > = {
-		[K in keyof T]: (...params: T[K]["params"]) => Promise<T[K]["result"]>;
+		[Method in keyof MethodsSpec]: (
+			...params: MethodsSpec[Method]["params"]
+		) => Promise<MethodsSpec[Method]["result"]>;
 	};
 
 export interface ExecutionClient extends EthRpcMethods<EthMethodsSpec> { }
-
-/**
- * @deprecated Use `ExecutionClient` instead.
- * This method will be removed in v0.5.0.
- */
-export class EthExecutionClient extends ExecutionClient { }

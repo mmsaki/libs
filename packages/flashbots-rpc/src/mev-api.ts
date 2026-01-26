@@ -7,9 +7,11 @@ export class FlashbotsClient extends BaseClient<FlashbotsMethodsSpec> {
 }
 
 export type FlashbotsRpcMethods<
-  T extends Record<string, { params: unknown[]; result: unknown }>,
+  MethodsSpec extends Record<string, { params: unknown[]; result: unknown }>,
 > = {
-    [M in keyof T]: (...params: T[M]["params"]) => Promise<T[M]["result"]>;
+    [Method in keyof MethodsSpec]: (
+      ...params: MethodsSpec[Method]["params"]
+    ) => Promise<MethodsSpec[Method]["result"]>;
   };
 export interface FlashbotsClient
   extends FlashbotsRpcMethods<FlashbotsMethodsSpec> { }
