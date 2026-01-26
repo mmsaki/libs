@@ -1,4 +1,4 @@
-import { BaseClient } from "@asyncswap/eth-rpc";
+import { BaseClient } from "@asyncswap/jsonrpc";
 
 export class BuildernetClient extends BaseClient<BuildernetMethodsSpec> {
   constructor(url: string) {
