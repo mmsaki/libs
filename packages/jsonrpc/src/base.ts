@@ -1,7 +1,9 @@
 import { JsonRpcClient } from "./client";
 
-export abstract class BaseClient<MethodsSpec extends RpcSpecBase> {
-	rpc: JsonRpcClient<MethodsSpec>;
+export abstract class BaseClient<
+	Spec extends Record<string, { params: unknown[]; result: unknown }>,
+> {
+	rpc: JsonRpcClient<Spec>;
 	protected headers: Record<string, string> = {};
 
 	constructor(url: string) {
@@ -24,11 +26,11 @@ export abstract class BaseClient<MethodsSpec extends RpcSpecBase> {
 				// dynamic rpc
 				if (typeof prop !== "string") return undefined;
 
-				const method = prop as keyof MethodsSpec;
+				const method = prop as keyof Spec;
 
 				return (
-					...params: MethodsSpec[typeof method]["params"]
-				): MethodsSpec[typeof method]["result"] =>
+					...params: Spec[typeof method]["params"]
+				): Spec[typeof method]["result"] =>
 					this.rpc.call(this.rpc.buildRequest(method, params), this.headers);
 			},
 		});

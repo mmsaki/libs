@@ -1,6 +1,7 @@
 import { JsonRpcErrorCode } from "./error";
+import type { JsonRpcRequest, JsonRpcResponse, SpecBase } from "./types";
 
-export class JsonRpcClient<MethodsSpec extends RpcSpecBase> {
+export class JsonRpcClient<MethodsSpec extends SpecBase> {
 	private id = 0;
 
 	constructor(private url: string) { }

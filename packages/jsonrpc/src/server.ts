@@ -1,4 +1,5 @@
 import { JsonRpcErrorCode } from "./error";
+import type { JsonRpcRequest, JsonRpcResponse, SpecBase } from "./types";
 
 type RpcParams = readonly unknown[] | undefined;
 
@@ -6,7 +7,7 @@ export type Handler<Params extends RpcParams, Result> = (
 	params: Params,
 ) => Promise<Result>;
 
-export class JsonRpcServer<MethodsSpec extends RpcSpecBase> {
+export class JsonRpcServer<MethodsSpec extends SpecBase> {
 	private methods = new Map<
 		keyof MethodsSpec,
 		Handler<MethodsSpec[keyof MethodsSpec]["params"], any>
