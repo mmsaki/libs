@@ -13,6 +13,7 @@ export class JsonRpcClient<MethodsSpec extends SpecBase> {
 		headers?: Record<string, string>,
 	): Promise<Result | Result[] | E> {
 		const response = await this.request(request, headers);
+		++this.id;
 		if ("error" in response) {
 			return response.error as E;
 		}
@@ -35,7 +36,7 @@ export class JsonRpcClient<MethodsSpec extends SpecBase> {
 			jsonrpc: "2.0",
 			method,
 			params,
-			id: ++this.id,
+			id: this.id,
 		};
 	}
 
