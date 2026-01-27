@@ -29,9 +29,9 @@ bun add -D @asyncswap/eth-types
 
 - [ethereum/execution-apis](https://github.com/ethereum/execution-apis)
 
-## Dependencies
+## Dependencies (0)
 
-- `@asyncswap/eth-rpc` - lib for ethereum execution client JSON-RPC 2.0 api.
+No external dependencies
 
 ## License
 

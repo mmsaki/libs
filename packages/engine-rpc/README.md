@@ -30,7 +30,7 @@ console.log(payload);
 
 ## Dependencies
 
-- `@asyncswap/eth-rpc` - lib for ethereum execution client JSON-RPC 2.0 api.
+- `@asyncswap/jsonrpc` - a minimal JSON-RPC 2.0 spec library.
 
 ## License
 

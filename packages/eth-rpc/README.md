@@ -34,7 +34,7 @@ eth.eth_getTransactionCount("0x34", "safe");
 
 ## Dependencies
 
-- `@asyncswap/jsonrpc` - JSON-RPC 2.0 client/server implementation
+- `@asyncswap/jsonrpc` - a minimal JSON-RPC 2.0 spec library.
 
 ## License
 

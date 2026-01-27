@@ -117,6 +117,14 @@ const result = await client.call('add', [2, 3]);
 console.log(result); // 5
 ```
 
+## References
+
+- [JSON-RPC 2.0 specification](https://www.jsonrpc.org/specification)
+
+## Dependencies (0)
+
+No external dependencies
+
 ## License
 
 MIT
