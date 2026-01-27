@@ -78,10 +78,11 @@ A library for Ethereum engine api JSON-RPC spec.
 ### Engine Api
 
 ```ts
-import { EngineExecutionClient } from "@asyncswap/engine-rpc";
+import { EngineClient } from "@asyncswap/engine-rpc";
+import type { EngineRpc } from "@asyncswap/engine-rpc";
 
 const engineUrl = "http://localhost:8551";
-const engine = new EngineExecutionClient(engineUrl, process.env.JWT_TOKEN!);
+const engine = new EngineClient(engineUrl, process.env.JWT_TOKEN!) as EngineRpc;
 const payload = await engine.eth_chainId();
 console.log(payload);
 ```
@@ -94,40 +95,13 @@ A library for flashbots relay rpc.
 
 ```ts
 import { FlashbotsClient } from "@asyncswap/flashbots-rpc";
+import type { FlashbotsRpc, Hex } from "@asyncswap/flashbots-rpc";
 
 const rpc = "https://relay.flashbots.net";
-const client = new FlashbotsClient(rpc);
-const bundle = {
- txs: ["0x123abc", "0x456def..."] as Hex[],
-
- blockNumber: "0xb63dcd" as Hex,
- minTimestamp: 0,
- maxTimestamp: 1615920932,
-};
-const body = client.rpc.buildRequest("eth_sendBundle", [bundle]);
-// const signature = wallet.sign(body)
-// const sender = wallet.address
-const result = await client
- .withHeaders({
-  "X-Flashbots-Signature": `0x<sender>:0x<signature>`,
- })
- .eth_sendBundle(bundle);
-console.log(result)
-```
-
-## [`@asyncswap/buildernet-rpc`](./packages/buildernet-rpc)
-
-A library for flashbots buildernet JSON-RPC api.
-
-### BuilderNet Client API
-
-```ts
-import { BuildernetClient } from "@asyncswap/buildernet-rpc";
-
-const rpc = "<https://rpc.buildernet.org>";
-const client = new BuildernetClient(rpc);
+const client = new FlashbotsClient(rpc) as FlashbotsRpc;
 const bundle = {
   txs: ["0x123abc", "0x456def..."] as Hex[],
+
   blockNumber: "0xb63dcd" as Hex,
   minTimestamp: 0,
   maxTimestamp: 1615920932,
@@ -140,6 +114,35 @@ const result = await client
     "X-Flashbots-Signature": `0x<sender>:0x<signature>`,
   })
   .eth_sendBundle(bundle);
+console.log(result);
+```
+
+## [`@asyncswap/buildernet-rpc`](./packages/buildernet-rpc)
+
+A library for flashbots buildernet JSON-RPC api.
+
+### BuilderNet Client API
+
+```ts
+import { BuildernetClient } from "@asyncswap/buildernet-rpc";
+import type { BuildernetRpc, Hex } from "@asyncswap/buildernet-rpc";
+
+const rpc = "https://rpc.buildernet.org";
+const client = new BuildernetClient(rpc) as BuildernetRpc;
+const bundle = {
+ txs: ["0x123abc", "0x456def..."] as Hex[],
+ blockNumber: "0xb63dcd" as Hex,
+ minTimestamp: 0,
+ maxTimestamp: 1615920932,
+};
+const body = client.rpc.buildRequest("eth_sendBundle", [bundle]);
+// const signature = wallet.sign(body)
+// const sender = wallet.address
+const result = await client
+ .withHeaders({
+  "X-Flashbots-Signature": `0x<sender>:0x<signature>`,
+ })
+ .eth_sendBundle(bundle);
 console.log(result);
 ```
 
