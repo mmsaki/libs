@@ -1,5 +1,11 @@
 # @asyncswap/jsonrpc
 
+## 0.4.14
+
+### Patch Changes
+
+- c972a08: makes id variable in class public
+
 ## 0.4.13
 
 ### Patch Changes
