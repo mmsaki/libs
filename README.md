@@ -19,6 +19,7 @@ bun add @asyncswap/eth-rpc
 bun add @asyncswap/engine-rpc
 bun add @asyncswap/flashbots-rpc
 bun add @asyncswap/buildernet-rpc
+bun add -D @asyncswap/eth-types
 ```
 
 ## Usage
