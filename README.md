@@ -2,12 +2,14 @@
 
 Typescript libraries for Ethereum client JSON-RPC api specs.
 
-- [`@asyncswap/jsonrpc`](./packages/jsonrpc)
-- [`@asyncswap/eth-types`](./packages/eth-types)
-- [`@asyncswap/eth-rpc`](./packages/eth-rpc)
-- [`@asyncswap/engine-rpc`](./packages/engine-rpc)
-- [`@asyncswap/flashbots-rpc`](./packages/flashbots-rpc)
-- [`@asyncswap/buildernet-rpc`](./packages/buildernet-rpc)
+| Package | Purpose |
+|---------|---------|
+| [`@asyncswap/jsonrpc`](./packages/jsonrpc) | Core JSON‑RPC utilities.|
+| [`@asyncswap/eth-types`](./packages/eth-types) | General Ethereum types (Tx, logs, etc.).|
+| [`@asyncswap/eth-rpc`](./packages/eth-rpc) | Ethereum client RPC wrappers.|
+| [`@asyncswap/engine-rpc`](./packages/engine-rpc) | RPC for the engine api.|
+| [`@asyncswap/flashbots-rpc`](./packages/flashbots-rpc) | Flashbots protect RPC.|
+| [`@asyncswap/buildernet-rpc`](./packages/buildernet-rpc) | RPC for BuilderNet.|
 
 ## Installation
 
