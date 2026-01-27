@@ -36,6 +36,18 @@ export abstract class BaseClient<
 		});
 	}
 
+	getRequestBody<Method extends keyof Spec>(
+		method: Method,
+		params: Spec[Method]["params"],
+	) {
+		return {
+			jsonrpc: "2.0",
+			method,
+			params,
+			id: this.rpc.id,
+		};
+	}
+
 	withHeaders(headers: Record<string, string>) {
 		this.headers = {
 			...headers,
