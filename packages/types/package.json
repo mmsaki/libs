@@ -1,0 +1,48 @@
+{
+	"name": "@asyncswap/types",
+	"description": "A library for Etherum Clients rpc params and return types.",
+	"author": "Meek Msaki",
+	"version": "0.0.0",
+	"license": "MIT",
+	"type": "module",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"keywords": [
+		"flashbots",
+		"buildernet",
+		"ethereum",
+		"mev",
+		"json-rpc"
+	],
+	"files": [
+		"dist",
+		"src"
+	],
+	"homepage": "https://github.com/asyncswap/eth-libs/tree/main/packages/types",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/asyncswap/eth-libs.git",
+		"directory": "packages/types"
+	},
+	"bugs": {
+		"url": "https://github.com/asyncswap/eth-libs/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"publish": "bun run build && bun publish --access public",
+		"format": "bun biome format --write"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@asyncswap/jsonrpc": "^0.4.12"
+	}
+}

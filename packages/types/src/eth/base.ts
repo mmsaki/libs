@@ -1,0 +1,19 @@
+// base.yaml
+export type Hex = `0x${string}`;
+export type Address = `0x${string}`;
+export type Addresses = Address[];
+export type Byte = Hex;
+export type Bytes = Hex;
+export type Bytes32 = Hex;
+export type Bytes8 = Hex;
+export type Bytes48 = Hex;
+export type Bytes96 = Hex;
+export type Bytes256 = Hex;
+export type Bytes65 = Hex;
+export type Ratio = number;
+export type Uint = Hex;
+export type Uint64 = Hex;
+export type Uint256 = Hex;
+export type UintDecimal = string; // e.g '1'
+export type Hash32 = Hex;
+export type NotFound = null;
