@@ -24,11 +24,11 @@ export type GetDelayedRefundsResult = {
 	indexedUpTo: Hex;
 };
 export type GetFeeRefundsByBlockParams = {
-	block_number: Hex;
+	blockNumber: Hex;
 };
 export type GetFeeRefundsByBlockResult = unknown;
 export type GetFeeRefundsByBundleParams = {
-	bundle_hash: Hex;
+	bundleHash: Hex;
 };
 export type GetFeeRefundsByBundleResult = unknown;
 export type GetFeeRefundsByRecipientParams = {
