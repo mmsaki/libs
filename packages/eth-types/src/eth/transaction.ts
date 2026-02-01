@@ -127,7 +127,7 @@ export type TransactionInfo = {
 	transactionIndex: Uint;
 } & TransactionSigned;
 export interface GenericTransaction {
-	type?: "0x0" | "0x1" | "0x2" | "0x3";
+	type?: "0x0" | "0x1" | "0x2" | "0x3" | "04";
 	to?: Address | null;
 	from?: Address;
 	value?: Uint;
